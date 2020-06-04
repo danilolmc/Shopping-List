@@ -1,0 +1,209 @@
+$maincolor: #fff;
+$colorfontTitle: #61BA6F;
+$colorfontQnt: #999;
+$colorfontList: #777;
+$buttocoloradd: #0ECC44;
+$buttocolordel: #FF4643;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: "Roboto",sans-serif;
+}
+
+@mixin borderRadius($size) {
+    
+    border-radius: $size;
+
+}
+
+@mixin shadow($sh) {
+    
+    box-shadow: $sh;
+
+}
+
+
+
+.container{
+
+    background: $maincolor;
+    margin: 10% auto;
+
+    @include shadow(0 2px 10px rgba(0,0,0,.15));
+    @include borderRadius(15px);
+    
+    padding: 5px;
+    max-width: 40%;
+    height: 450px;
+    position: relative;
+}
+
+.container nav{
+    
+    text-transform: uppercase;
+    display: flex;
+    max-height: 55px;
+    justify-content: space-between;
+    padding: 15px;
+    
+}
+
+nav h1{
+    color:$colorfontTitle;
+    font-weight: 100;
+    font-size: 15px;
+    margin-top: 12px;
+    margin-left: 12px;
+}
+
+
+nav span{
+    color:$colorfontQnt;
+    font-weight: 100;
+    font-size: 13px;
+    height: 15px;
+    text-align: center;
+    margin-top: 13px;
+    margin-right: 20px;
+    transition: 1s;;
+    
+}
+
+div{
+    position: relative;
+    overflow-y: auto;
+    height: 250px;
+    padding-right: 21px;
+    overflow-x:hidden;
+}
+
+::-webkit-scrollbar{
+    background: none;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #ddd;
+    height: 10px;
+    @include borderRadius(25px)
+} 
+
+p{
+    color: $colorfontQnt;
+    margin-left: 28px;
+    top: 0;
+    font-size: 13px;
+
+}
+
+li label{
+    color:$colorfontList;
+    margin-top: 0;
+    font-size: 14px;
+    width: 85%;
+    overflow: hidden;
+}
+
+li{
+
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 15px 3px 15px 15px;
+    height:47px;
+    margin-left: -15px;
+    margin-top:10px;
+    @include shadow(0 0 1px rgba(0,0,0,.8));
+    @include borderRadius(25px);
+    transition: .5s;
+    position: relative;
+
+}
+
+li input   {
+    position: absolute;
+    height: 47px;
+    width:87%;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    outline: none;
+    border:none;
+    color:$colorfontQnt;
+    font-size: 14px;
+    @include borderRadius(22px);
+    display: none;
+    transition: 1s;
+}
+
+.showhideinput{
+    
+    display: block;
+    
+}
+
+li .trash{
+    width: 40px;
+    height: 40px;
+    margin-top: -11.5px;
+    font-size: 20px;
+    text-align:center;
+    padding: 9px;
+    background: $buttocolordel;
+    color: $maincolor;
+    @include borderRadius(25px);
+    transition:.5s;
+    cursor: pointer;
+}
+
+li .trash:hover{
+    transform: scale(1.1);
+}
+
+
+article{
+    margin-top: 15px;
+    position: relative;
+}
+
+.addtask{
+
+    position: absolute;
+    background: $buttocoloradd;
+    color: $maincolor;
+    text-align: center;
+    bottom: 3px;
+    right: 25px;
+    padding: 13px;
+    height: 40px;
+    width: 40px;
+    @include borderRadius(20px);
+    transition:.5s;
+    cursor: pointer;
+}
+
+.addtask:hover{
+    transform:scale(1.1);
+}
+
+article  input{
+
+    height: 47px;
+    width:88%;
+    padding: 15px 50px 15px 15px;
+    margin-left: 25px;
+    transform: translateX(0px);
+    @include shadow(0 0 2px #aaa);
+    @include borderRadius(22px);
+    outline: none;
+    border:none;
+    color:$colorfontQnt;
+    font-size: 16px;
+}
+
+article input::placeholder{
+    color:#bbb;
+}
+
